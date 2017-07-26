@@ -1,0 +1,32 @@
+﻿@using DonationApplication.Data
+@model DonationApplication.Web.Models.CategoriesViewModel
+
+
+<div class="row">
+    <div class="col-md-3">
+        <select id="category-filter" class="form-control">
+            <option value="0">-- FILTER BY CATEGORY --</option>
+            @foreach (Category category in Model.Categories)
+            {
+                <option value="@category.Id">@category.Name</option>
+            }
+        </select>
+    </div>
+</div>
+
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>Category</th>
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Amount</th>
+        <th>Actions</th>
+    </tr>
+
+</table>
+
+@section scripts
+{
+    <script src="/Scripts/pending.js"></script>
+}

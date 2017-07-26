@@ -1,0 +1,65 @@
+﻿@using DonationApplication.Data
+@model DonationApplication.Web.Models.CategoriesViewModel
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <button class="btn btn-primary" id="add">Add Category</button>
+        <table class="table table-bordered" style="margin-top: 20px;">
+            <tr>
+                <th>Category Name</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (Category category in Model.Categories)
+            {
+                <tr id="view-category-@category.Id">
+                    <td style="text-align:center">@category.Name</td>
+                    <td style="text-align:center">
+                        <button data-category-id="@category.Id" class="btn btn-warning edit">Edit</button>
+                        @if (!category.Applications.Any())
+                        {
+                            <button data-category-id="@category.Id" class="btn btn-danger delete">Delete</button>
+                        }
+                    </td>
+                </tr>
+
+                <tr id="edit-category-@category.Id" style="display: none;">
+                    <td style="text-align: center">
+                        <input id="category-name-@category.Id" type="text" class="form-control" value="@category.Name"/>
+                    </td>
+                    <td style="text-align:center">
+                        <button data-category-id="@category.Id" class="btn btn-info update">Update</button>
+                    </td>
+                </tr>
+
+
+            }
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form method="post" action="/admin/addcategory">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Add Category</h4>
+                </div>
+                <div class="modal-body">
+                    <input id="category-name" type="text" placeholder="Name" class="form-control" name="name" />
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary">Add Category</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </form>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section scripts
+{
+    <script src="/Scripts/categories.js"></script>
+}

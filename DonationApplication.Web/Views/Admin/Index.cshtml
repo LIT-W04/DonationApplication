@@ -1,0 +1,19 @@
+﻿@model DonationApplication.Web.Models.LoggedInViewModel
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 jumbotron" style="text-align: center;">
+        <h2>Welcome back to the admin section @Model.User.FirstName @Model.User.LastName</h2>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-block" href="/admin/pendingapplications">Pending Applications</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-block" href="/admin/categories">Manage Categories</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-block" href="/account/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+

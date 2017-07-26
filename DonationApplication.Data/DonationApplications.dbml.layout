@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DonationApplications">
+  <DataContextMoniker Name="/DonationApplicationsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b7eb533e-42a7-450d-8126-a93a6448a7f9" absoluteBounds="0.75, 3.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DonationApplicationsDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8774877-db3a-403d-84f4-d8de4c2c1da2" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08e6c718-bf24-4510-a29a-4b7a86e47602" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/DonationApplicationsDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f07b61a-44c3-464f-9f7a-f55d954e91a0" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67b632e3-032e-4339-a47c-b4ec5226852d" absoluteBounds="5.375, 1.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DonationApplicationsDataContext/Application" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da66e30b-3a63-47f2-b6ec-783a5cc63a7b" absoluteBounds="5.39, 2.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.15949625651042); (5.375 : 2.15949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DonationApplicationsDataContext/Category/Category_Application" />
+      <nodes>
+        <classShapeMoniker Id="08e6c718-bf24-4510-a29a-4b7a86e47602" />
+        <classShapeMoniker Id="67b632e3-032e-4339-a47c-b4ec5226852d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.03050017447917); (6.375 : 5.03050017447917); (6.375 : 4.03049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DonationApplicationsDataContext/User/User_Application" />
+      <nodes>
+        <classShapeMoniker Id="b7eb533e-42a7-450d-8126-a93a6448a7f9" />
+        <classShapeMoniker Id="67b632e3-032e-4339-a47c-b4ec5226852d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,25 @@
+﻿<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">
+        <h2>Create an account</h2>
+        <form method="POST" action="/account/register">
+            <input type="text" name="firstName" placeholder="First Name" class="form-control"/>
+            <br/>
+            <input type="text" name="lastName" placeholder="Last Name" class="form-control"/>
+            <br/>
+            <input type="text" id="email" name="email" placeholder="Email Address" class="form-control"/>
+            <span id="email-error" style="color: red; display: none;"></span>
+            <br/>
+            <input type="password" id="password" name="password" placeholder="Password" class="form-control"/>
+            <br/>
+            <input type="password" id="password-match" placeholder="Retype password" class="form-control"/>
+            <span id="password-error" style="color: red; display: none;">Password mismatch</span>
+            <br/>
+            <button class="btn btn-primary" id="submit-button" disabled="disabled">Submit</button>
+        </form>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="/Scripts/register.js"></script>
+}
